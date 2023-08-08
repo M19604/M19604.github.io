@@ -1,0 +1,405 @@
+<!--** MADE BY LUKE SKUTT, 8/7/2023 **-->
+<title>Sector of International Integrity</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lexend">
+<div id="body">
+<div class="hero" id="hero">
+<video loop autoplay class="background" src="https://zippy.gfycat.com/BraveHilariousDartfrog.mp4"></video>
+<div class="title">Sector of International Integrity</div>
+<div class="subtitle">Create a ticket to talk to one of us or submit an application.</div>
+<div class="ticketBTN" onclick="findTicket()">Create a Ticket</div>
+<div class="applicationBTN" onclick="scrollDown()">Create Application</div>
+</div>
+<div class="ticketPage" id="ticketPage">
+
+<div class="container" id="question1">
+<div id="questionText1" class="question">Your name...</div>
+<div class="innerContainer">
+<textarea id="answer1" placeholder="Type here..."></textarea>
+</div>
+<div class="nextBTN" onclick="nextPage()">Next</div>
+</div>
+
+<div class="container" id="question2">
+<div id="questionText2" class="question">Your Discord username...</div>
+<div class="innerContainer">
+<textarea id="answer2" placeholder="Type here..."></textarea>
+</div>
+<div class="nextBTN" onclick="nextPage()">Next</div>
+</div>
+
+<div class="container" id="question3">
+<div id="questionText3" class="question">Why do you wish to join the SII?</div>
+<div class="innerContainer">
+<textarea id="answer3" placeholder="Type here..."></textarea>
+</div>
+<div class="nextBTN" onclick="nextPage()">Next</div>
+</div>
+
+<div class="container" id="question4">
+<div id="questionText4" class="question">What is the main job of the SII?</div>
+<div class="innerContainer">
+<textarea id="answer4" placeholder="Type here..."></textarea>
+</div>
+<div class="nextBTN" onclick="nextPage()">Next</div>
+</div>
+
+<div class="container" id="question5">
+<div id="questionText5" class="question">What country are you apart of (If any)?</div>
+<div class="innerContainer">
+<textarea id="answer5" placeholder="Type here..."></textarea>
+</div>
+<div class="nextBTN" onclick="nextPage()">Next</div>
+</div>
+
+<div class="container" id="question6">
+<div id="questionText6" class="question">How can you make an impact within the SII?</div>
+<div class="innerContainer">
+<textarea id="answer6" placeholder="Type here..."></textarea>
+</div>
+<div class="nextBTN" onclick="nextPage()">Next</div>
+</div>
+
+<div class="container" id="question7">
+<div id="questionText7" class="question">What are some of your strengths that could help the SII?</div>
+<div class="innerContainer">
+<textarea id="answer7" placeholder="Type here..."></textarea>
+</div>
+<div class="nextBTN" onclick="nextPage()">Next</div>
+</div>
+
+<div class="container" id="question8">
+<div id="questionText8" class="question">Do you understand that any plagiarism and misconduct will result in a failure?</div>
+<div class="innerContainer">
+<textarea id="answer8" placeholder="Type here..."></textarea>
+</div>
+<div class="nextBTN" onclick="nextPage()">Submit</div>
+</div>
+
+<div class="container" id="question9">
+<div class="innerContainerFinal">Your application will be reviewed soon. Please be patient.</div>
+</div>
+
+</div>
+</div>
+<style>
+body {
+margin: 0;
+font-family: "Lexend";
+user-select: none;
+overflow: hidden;
+background-color: #111;
+}
+
+#body {
+height: 100%;
+width: 100%;
+position: absolute;
+top: 0;
+left: 0;
+transition: .5s;
+}
+
+::placeholder {
+color: white;
+}
+
+.hero {
+height: 100%;
+width: 100%;
+background-color: #111;
+transition: .5s;
+position: absolute;
+top: 0;
+left: 0;
+}
+
+.hero .background {
+height: 100%;
+width: 100%;
+position: absolute;
+top: 0;
+left: 0;
+}
+
+.hero div.title {
+height: 25%;
+color: #e9e9e9;
+width: 100%;
+position: absolute;
+top: 10%;
+left: 0;
+font-size: 5vw;
+font-weight: bold;
+display: flex;
+align-items: center;
+justify-content: center;
+}
+
+.hero div.subtitle {
+height: 5%;
+color: #a9a9a9;
+width: 100%;
+position: absolute;
+top: 35%;
+left: 0;
+font-size: 3vw;
+display: flex;
+align-items: center;
+justify-content: center;
+}
+
+.hero div.ticketBTN {
+height: 15%;
+width: 20%;
+background-color: dodgerBlue;
+position: absolute;
+top: 50%;
+left: 25%;
+display: flex;
+align-items: center;
+justify-content: center;
+border-radius: 2vw;
+font-size: 2vw;
+font-weight: 500;
+color: #fff;
+box-shadow: 0px 0px 3vw dodgerBlue;
+filter: brightness(85%);
+transition: .5s;
+}
+
+.hero div.applicationBTN {
+height: 15%;
+width: 20%;
+background-color: dodgerBlue;
+position: absolute;
+top: 50%;
+right: 25%;
+display: flex;
+align-items: center;
+justify-content: center;
+border-radius: 2vw;
+font-size: 2vw;
+font-weight: 500;
+color: #fff;
+box-shadow: 0px 0px 3vw dodgerBlue;
+filter: brightness(85%);
+transition: .5s;
+}
+
+.hero div.applicationBTN:hover,
+.hero div.ticketBTN:hover {
+filter: brightness(100%);
+box-shadow: 0px 0px 5vw dodgerBlue;
+}
+
+.ticketPage {
+width: 100%;
+height: 100%;
+position: absolute;
+top: 100%;
+left: 0;
+background-color: #121212;
+transition: 1s;
+display: flex;
+align-items: center;
+justify-content: center;
+}
+
+.ticketPage div.container:not(#question1) {
+display: none;
+opacity: 0;
+}
+
+.ticketPage div.container {
+width: 70%;
+height: 50%;
+background-color: #191919;
+border-radius: 1vw;
+border: 2px solid #555;
+padding: .5vw;
+transition: .5s;
+}
+
+.ticketPage div.container:hover {
+border: 2px solid dodgerBlue;
+}
+
+.ticketPage div.question {
+height: 30%;
+display: flex;
+align-items: center;
+justify-content: center;
+width: 100%;
+color: white;
+font-size: 3vw;
+text-align: center;
+}
+
+.ticketPage div.innerContainer {
+width: 100%;
+height: 70%;
+position: relative;
+bottom: 0;
+left: 0;
+background-color: #111;
+border-radius: 1vw;
+}
+
+.ticketPage .nextBTN {
+background-color: dodgerBlue;
+box-shadow: 0px 0px 3vw dodgerBlue;
+z-index: 2;
+height: 10%;
+width: 10%;
+color: white;
+font-weight: bold;
+display: flex;
+align-items: center;
+justify-content: center;
+filter: brightness(80%);
+transition: .5s;
+border-radius: 1vw;
+position: absolute;
+right: 12%;
+bottom: 20%;
+}
+
+.ticketPage div.nextBTN:hover {
+filter: brightness(100%);
+}
+
+.ticketPage textarea {
+height: 100%;
+width: 100%;
+background-color: #111;
+color: white;
+font-family: "Lexend";
+padding: 1vw;
+box-sizing: border-box;
+font-size: 2vw;
+border: none;
+outline: none;
+border-radius: 1vw;
+}
+
+.ticketPage div.innerContainerFinal {
+width: 100%;
+height: 100%;
+position: relative;
+bottom: 0;
+left: 0;
+background-color: #111;
+border-radius: 1vw;
+color: white;
+font-size: 4vw;
+text-align: center;
+display: flex;
+align-items: center;
+justify-content: center;
+}
+</style>
+<script>
+function scrollDown() {
+document.getElementById("body").style.top = "-100%";
+}
+
+function findTicket() {
+const tickets = ["https://siprnet.w3spaces.com/ticket-lkj2h34l5jh2lk34j.html", "https://siprnet.w3spaces.com/ticket-2po3i4u52po4iu52.html", "https://siprnet.w3spaces.com/ticket-12n4bv5mn34b5v2m.html", "https://siprnet.w3spaces.com/ticket-m6nb868m78b5.html", "https://siprnet.w3spaces.com/ticket-n3bv546mn3bv54m6nbv.html"];
+var ticket = tickets[Math.floor(Math.random() * tickets.length)];
+const request = new XMLHttpRequest();
+request.open("POST", "https://discord.com/api/webhooks/1138169043191341177/PCTgukJfrnKt1_Q0BxPX_1XkrUj32RCFZmXJkbvhCLEZldL1j2u-fkZTEd8gXExm97Ax");
+request.setRequestHeader("Content-type", "application/json");
+var embed = {
+author: {
+name: "TICKET OPENED"
+},
+title: "A ticket has been opened.",
+description: "**" + ticket + "**"
+}
+
+var params = {
+username: "Tickets",
+embeds: [ embed ]
+}
+
+request.send(JSON.stringify(params));
+setTimeout(function() {
+location.replace(ticket);
+}, 500)
+}
+
+var page = 1;
+var answer1 = "";
+var answer2 = "";
+var answer3 = "";
+var answer4 = "";
+var answer5 = "";
+var answer6 = "";
+var answer7 = "";
+var answer8 = "";
+function nextPage() {
+document.getElementById("question" + page).style.opacity = 0;
+setTimeout(function() {
+document.getElementById("question" + page).style.display = "none";
+if (page === 1) {
+answer1 = document.getElementById("answer" + page).value;
+}
+if (page === 2) {
+answer2 = document.getElementById("answer" + page).value;
+}
+if (page === 3) {
+answer3 = document.getElementById("answer" + page).value;
+}
+if (page === 4) {
+answer4 = document.getElementById("answer" + page).value;
+}
+if (page === 5) {
+answer5 = document.getElementById("answer" + page).value;
+}
+if (page === 6) {
+answer6 = document.getElementById("answer" + page).value;
+}
+if (page === 7) {
+answer7 = document.getElementById("answer" + page).value;
+}
+if (page === 8) {
+answer8 = document.getElementById("answer" + page).value;
+}
+}, 600)
+setTimeout(function() {
+page += 1;
+document.getElementById("question" + page).style.display = "block";
+setTimeout(function() {
+document.getElementById("question" + page).style.opacity = 1;
+if (page === 9) {
+alert("TEST");
+submitApplication();
+}
+}, 100)
+}, 700)
+}
+
+function submitApplication() {
+const d = new Date();
+const request = new XMLHttpRequest()
+request.open("POST", "https://discord.com/api/webhooks/1138273513736786060/7BPIQWV-4c9C6XEtn5MWSs_sGnznFLyw7mT4RjLwru0V8Wo_LPNuPobWiQocSO4mE7qs");
+request.setRequestHeader("Content-type", "application/json");
+var embed = {
+author: {
+name: "APPLICATION SUBMITTED"
+},
+title: answer1 + " has submitted an application.",
+description: "**" + document.getElementById("questionText1").innerHTML + ":** " + answer1 + "\n\n**" + document.getElementById("questionText2").innerHTML + ":** " + answer2 + "\n\n**" + document.getElementById("questionText3").innerHTML + ":** " + answer3 + "\n\n**" + document.getElementById("questionText4").innerHTML + ":** " + answer4 + "\n\n**" + document.getElementById("questionText5").innerHTML + ":** " + answer5 + "\n\n**" + document.getElementById("questionText6").innerHTML + ":** " + answer6 + "\n\n**" + document.getElementById("questionText7").innerHTML + ":** " + answer7 + "\n\n**" + document.getElementById("questionText8").innerHTML + ":** " + answer8,
+footer: {
+text: d.getMonth() + 1 + "/" + d.getDate() + "/" + d.getFullYear() + " - " + d.getHours() + ":" + d.getMinutes() + ":" + d.getSeconds()
+}
+}
+var params = {
+username: "Application Bot",
+embeds: [ embed ]
+}
+
+request.send(JSON.stringify(params));
+}
+</script>
+<!--** MADE BY LUKE SKUTT, 8/7/2023 **-->
