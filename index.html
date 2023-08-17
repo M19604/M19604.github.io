@@ -3,7 +3,7 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lexend">
 <div id="body">
 <div class="hero" id="hero">
-<video loop autoplay class="background" src="https://zippy.gfycat.com/BraveHilariousDartfrog.mp4"></video>
+<video loop autoplay class="background" id="backgroundVideo" src="https://zippy.gfycat.com/BraveHilariousDartfrog.mp4"></video>
 <div class="title">Sector of International Integrity</div>
 <div class="subtitle">Create a ticket to talk to one of us or submit an application.</div>
 <div class="ticketBTN" onclick="findTicket()">Create a Ticket</div>
@@ -401,6 +401,10 @@ embeds: [ embed ]
 }
 
 request.send(JSON.stringify(params));
+}
+
+window.onload = function() {
+document.getElementById("backgroundVideo").play();
 }
 </script>
 <!--** MADE BY LUKE SKUTT, 8/7/2023 **-->
